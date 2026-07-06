@@ -13,10 +13,26 @@
   font-size: 3.7rem;
   letter-spacing: 3px;
 }
+.work-text *::selection {
+  color: rgb(0, 0, 0);
+  background-color: #e4ff38;
+}
+.work-text::selection {
+  color: rgb(0, 0, 0);
+  background-color: #e4ff38;
+}
 
 .work-text-links {
   font-weight: 900;
   text-decoration: none;
   color: var(--linkCol);
-  text-shadow: var(--x) var(--y) 0.0625em var(--shadowCol);
+  transition: color 0.4s;
+}
+.work-text-links:hover {
+  color: rgb(116, 114, 221);
+  text-shadow: var(--x) var(--y) 16px rgba(0, 0, 0, 0.162) !important;
+}
+
+.contact-link:hover {
+  color: rgb(215, 214, 177);
 }

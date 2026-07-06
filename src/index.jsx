@@ -47,7 +47,7 @@ function Head() {
     "rgb(255, 14, 62)",
     "rgb(254, 225, 109)",
     "rgb(116, 114, 221)",
-    "rgba(53, 55, 60, 0.74)",
+    "rgb(215, 214, 177)",
   ];
   const [logo, changeLogo] = useState(Elogo); // alows interchangable logos between files
 
