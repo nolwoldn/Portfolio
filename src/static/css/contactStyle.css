@@ -1,0 +1,39 @@
+.contact-full-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50vh;
+}
+
+.text {
+  font-size: 7rem;
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+.text::after {
+  content: "uslkoorginal@gmail.com";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(35, 215, 101),
+    rgb(116, 114, 221),
+    rgb(254, 225, 109),
+    rgb(255, 14, 62)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  transform: translate(var(--transX), var(--transY));
+  z-index: -1;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.text::selection {
+  background-color: rgb(35, 215, 101);
+  color: white;
+}
