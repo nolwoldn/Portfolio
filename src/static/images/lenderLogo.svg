@@ -1,0 +1,33 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  width="100"
+  height="100"
+>
+  <defs>
+    <!-- A modern blue-to-purple gradient -->
+    <linearGradient id="lGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color: #4facfe; stop-opacity: 1" />
+      <stop offset="100%" style="stop-color: #00f2fe; stop-opacity: 1" />
+    </linearGradient>
+    <!-- Subtle drop shadow to give it depth on any background -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- The geometric 'L' shape -->
+  <path
+    d="M 25,15 
+           L 45,15 
+           L 45,65 
+           L 75,65 
+           L 75,85 
+           L 25,85 
+           Z"
+    fill="url(#lGrad)"
+    filter="url(#dropShadow)"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+</svg>
