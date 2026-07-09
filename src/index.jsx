@@ -16,6 +16,8 @@ import Projects from "./bodyFiles/projects.jsx";
 import Contact from "./bodyFiles/contact.jsx";
 import NotFound from "./bodyFiles/pageNotFound.jsx";
 
+import { createRoot } from "react-dom/client";
+
 function Head() {
   let [textIndex, changeTextIndex] = useState(-1);
   const location = useLocation();
@@ -105,4 +107,4 @@ function Index() {
   );
 }
 
-export default Index;
+createRoot(document.getElementById("root")).render(<Index />)

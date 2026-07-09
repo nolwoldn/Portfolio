@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,19 +7,13 @@ import {
   NavLink,
   useLocation,
 } from "react-router-dom";
-import {
-  FaReact,
-  FaJsSquare,
-  FaHtml5,
-  FaCss3Alt,
-  FaPython,
-} from "react-icons/fa";
 import ".././static/css/work.css";
-import djangoLogo from "../static/images/djangoLogo.png";
+import "devicon/devicon.min.css";
 
 function Work() {
   const [mouseCords, setMouseCords] = useState({ x: 0, y: 0 });
   const imageWidtHeight = 74;
+  const bottomEl = useRef(null);
 
   useEffect(() => {
     document.title = "My Work";
@@ -35,9 +29,16 @@ function Work() {
 
     window.addEventListener("mousemove", currLoc);
     return () => {
-      window.addEventListener("mousemove", currLoc);
+      window.removeEventListener("mousemove", currLoc);
     };
   }, []);
+
+  const scrollToBottom = () => {
+    bottomEl.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
 
   return (
     <div className="work-full-container">
@@ -72,7 +73,14 @@ function Work() {
           .
         </h1>
         <div className="bottom-buttons">
-          <button className="bottom-button browse">Browse skills</button>
+          <button
+            onClick={() => {
+              scrollToBottom();
+            }}
+            className="bottom-button browse"
+          >
+            Browse skills
+          </button>
           <NavLink to={"/contact"}>
             <button className="bottom-button">Contact me</button>
           </NavLink>
@@ -87,7 +95,7 @@ function Work() {
                 className="card-num"
                 style={{
                   background:
-                    "linear-gradient(45deg, rgb(0, 216, 255), rgb(0 0 0),rgb(255, 165, 0) ,rgb(103, 103, 255))",
+                    "linear-gradient(45deg, rgb(0, 216, 255), rgb(0, 0 ,0),rgb(255, 165, 0) ,rgb(103, 103, 255))",
                 }}
               >
                 1.
@@ -99,10 +107,22 @@ function Work() {
             </p>
           </section>
           <section className="card-right">
-            <FaReact size={imageWidtHeight} color="rgb(0, 216, 255)" />
-            <FaJsSquare size={imageWidtHeight} />
-            <FaHtml5 size={imageWidtHeight} color="orange" />
-            <FaCss3Alt size={imageWidtHeight} color="rgb(103, 103, 255)" />
+            <i
+              className="devicon-react-plain colored"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
+            <i
+              className="devicon-javascript-plain"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
+            <i
+              className="devicon-html5-plain colored"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
+            <i
+              className="devicon-css3-plain colored"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
           </section>
         </div>
         <div className="card">
@@ -111,7 +131,8 @@ function Work() {
               <span
                 className="card-num"
                 style={{
-                  background: "linear-gradient(45deg , black , white)",
+                  background:
+                    "linear-gradient(45deg , rgb(0, 0, 0) , rgb(255, 255, 255))",
                 }}
               >
                 2.
@@ -123,11 +144,43 @@ function Work() {
             </p>
           </section>
           <section className="card-right">
-            <img
-              src={djangoLogo}
-              width={`${imageWidtHeight}px`}
-              height={`${imageWidtHeight}px`}
-            />
+            <i
+              className="devicon-django-plain colored"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
+          </section>
+        </div>
+        <div ref={bottomEl} className="card">
+          <section className="card-left">
+            <h2 className="card-head">
+              <span
+                className="card-num"
+                style={{
+                  background:
+                    "linear-gradient(45deg , rgb(0, 255, 0) , rgb(234, 45, 46),rgb(0, 68, 130))",
+                }}
+              >
+                3.
+              </span>{" "}
+              Future plans
+            </h2>
+            <p className="card-desc">
+              Its the languages and frame works I am planning on learning
+            </p>
+          </section>
+          <section className="card-right">
+            <i
+              className="devicon-nodejs-plain colored"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
+            <i
+              className="devicon-java-plain colored"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
+            <i
+              className="devicon-cplusplus-plain colored"
+              style={{ fontSize: `${imageWidtHeight}px` }}
+            ></i>
           </section>
         </div>
       </div>
