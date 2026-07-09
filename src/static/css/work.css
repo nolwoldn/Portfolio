@@ -2,6 +2,7 @@
   width: 100%;
   height: fit-content;
   display: flex;
+  flex-flow: column nowrap;
   font-family: sans-serif;
 }
 .work-text-div {
@@ -27,6 +28,7 @@
   text-decoration: none;
   color: var(--linkCol);
   transition: color 0.4s;
+  transition: text-shadow 0.1s;
 }
 .work-text-links:hover {
   color: rgb(116, 114, 221);
@@ -34,5 +36,48 @@
 }
 
 .contact-link:hover {
-  color: rgb(215, 214, 177);
+  color: rgb(35, 215, 101);
+}
+
+
+
+.bottom-cards {
+  margin-top: 5rem;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 40px 80px;
+}
+
+
+.card-left {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.2rem;
+}
+.card-left * {
+  margin: 0;
+}
+.card-head {
+  font-size: 2.5rem;
+}
+.card-num {
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+.card-desc {
+  margin-left: 3rem;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.395);
+}
+
+.card-right {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.3rem;
 }
