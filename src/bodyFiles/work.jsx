@@ -1,12 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  NavLink,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as NavLink } from "react-router-dom";
 import ".././static/css/work.css";
 import "devicon/devicon.min.css";
 
